@@ -1,0 +1,28 @@
+{
+  "scripts": {
+    "test": "tsdx test",
+    "lint": "tsdx lint src test"
+  },
+  "peerDependencies": {},
+  "husky": {
+    "hooks": {
+      "pre-commit": "tsdx lint"
+    }
+  },
+  "prettier": {
+    "printWidth": 80,
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "es5"
+  },
+  "devDependencies": {
+    "@types/jest": "^25.1.4",
+    "husky": "^4.2.3",
+    "tsdx": "^0.12.3",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  },
+  "dependencies": {
+    "xstream": "^11.11.0"
+  }
+}
