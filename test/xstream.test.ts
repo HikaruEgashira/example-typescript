@@ -1,6 +1,5 @@
-jest.setTimeout(10000)
-
 import xs from 'xstream'
+jest.setTimeout(10000)
 
 describe('stream', () => {
   it('works', async () => {
