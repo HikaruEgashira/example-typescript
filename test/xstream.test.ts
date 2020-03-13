@@ -1,6 +1,8 @@
 import xs from 'xstream'
 jest.setTimeout(10000)
 
+const noop = () => {}
+
 describe('stream', () => {
   it('works', async () => {
     const stream = xs
@@ -12,7 +14,7 @@ describe('stream', () => {
 
     await new Promise(done => {
       stream.addListener({
-        next: void 0,
+        next: noop,
         error: console.error,
         complete: done,
       })
@@ -28,7 +30,7 @@ describe('stream', () => {
       .debug(console.log)
 
     stream.addListener({
-      next: void 0,
+      next: noop,
       error: done,
       complete: done,
     })
