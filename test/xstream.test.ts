@@ -1,4 +1,4 @@
-import xs from 'xstream'
+import xs, { Stream } from 'xstream'
 jest.setTimeout(10000)
 
 describe('stream', () => {
@@ -29,6 +29,20 @@ describe('stream', () => {
 
     stream.addListener({
       next: void 0,
+      error: done,
+      complete: done,
+    })
+  })
+})
+
+describe('marge', () => {
+  it('number[]', done => {
+    const stream1$ = xs.of(1, 2, 3, 4, 5)
+    const stream2$ = xs.of(10, 11, 12, 13, 14)
+    const master$ = Stream.merge(stream1$, stream2$).debug(console.log)
+
+    master$.addListener({
+      next: console.log,
       error: done,
       complete: done,
     })
